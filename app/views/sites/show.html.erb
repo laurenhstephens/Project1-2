@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<p> Web analytics for <%= @site.name %><p>
+  <b>Key:</b>
+  <%= @site.key %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @site.url %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @site.name %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @site.desc %>
+</p>
+<p>
+<b> user sessions </b>
+<table>
+  <tr>
+    <th>Page</th>
+    <th>end</th>
+    <th>duration</th>
+    
+  </tr>
+<% @site.userSessions.each do |session|%>
+ <tr>
+    <td><%= session.pageName %></td>
+    <td><%= session.endGuess.strftime('%H:%M') %></td>
+    <td><%= session.duration %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Edit', edit_site_path(@site) %> |
+<%= link_to 'Back', sites_path %>

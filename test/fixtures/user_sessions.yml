@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  endGuess: 2013-02-20 14:08:08
+  startTime: 2013-02-20 14:08:08
+  keySession: MyString
+  IP: MyString
+
+two:
+  endGuess: 2013-02-20 14:08:08
+  startTime: 2013-02-20 14:08:08
+  keySession: MyString
+  IP: MyString
