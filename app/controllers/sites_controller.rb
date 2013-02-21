@@ -27,16 +27,8 @@ class SitesController < ApplicationController
     set_cors_headers
     @site = Site.where("key =?", params[:id]).first
     if @site.nil?
-      respond_to do |format|
-        format.html { redirect_to sites_url }
-        format.json { render json: @site.errors, status: :unprocessable_entity }
-      end
     else
       @site.create_user_session(Time.now,params[:page], params[:duration])
-      respond_to do |format|
-        format.html { redirect_to :action => "show", :id => @site.key }
-        format.json { render json: @sites }
-      end
     end
   end
 
